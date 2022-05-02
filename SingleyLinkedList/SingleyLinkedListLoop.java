@@ -1,9 +1,10 @@
+package SingleyLinkedList;
 
 public class SingleyLinkedListLoop {
 
 
 
-	ListNode headNode;
+	static ListNode headNode;
 	
 	public static void main(String[] args)
 	{
@@ -17,8 +18,8 @@ public class SingleyLinkedListLoop {
 	
 		
 		SingleyLinkedListLoop singleyLinkedList = new SingleyLinkedListLoop();
-		singleyLinkedList.headNode = node1;
-		singleyLinkedList.headNode.next  = node2;
+		headNode = node1;
+	    headNode.next  = node2;
 		node2.next  = node3;
 		node3.next = node4;
 		node4.next = node5;
@@ -26,13 +27,13 @@ public class SingleyLinkedListLoop {
 		node6.next = node3;
 	
 		
-	detectLoop(singleyLinkedList.headNode);
+	detectLoop();
 	
-	findStartOfLoop(singleyLinkedList.headNode);
+	findStartOfLoop();
 		
 	}
 	
-  public static  ListNode detectLoop(ListNode headNode) {
+  public static  ListNode detectLoop() {
 	  
 		ListNode slowptr = headNode;
 		ListNode fastPtr = headNode;
@@ -51,9 +52,9 @@ public class SingleyLinkedListLoop {
       return slowptr;
 	}
 
-   public static void findStartOfLoop(ListNode headNode) {
+   public static void findStartOfLoop() {
  
-	   ListNode slowptr  = detectLoop(headNode); 
+	   ListNode slowptr  = detectLoop(); 
 	  ListNode temp = headNode; 
 
 	  while(slowptr != temp) { 
@@ -67,7 +68,7 @@ public class SingleyLinkedListLoop {
    //Remove loop 
    public static void removeLoop(ListNode headNode) {
 	   
-	   ListNode slowptr = detectLoop(headNode);	   
+	   ListNode slowptr = detectLoop();	   
 	   
 	   ListNode temp = headNode;
 	   while(temp.next != slowptr.next)

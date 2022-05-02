@@ -1,8 +1,9 @@
+package SingleyLinkedList;
 
 public class SingleyLinkedListt {
 
 
-	ListNode headNode;
+static	ListNode headNode;
 	
 	public static void main(String[] args)
 	{
@@ -32,44 +33,44 @@ public class SingleyLinkedListt {
 		
 		//printing all elements
 		System.out.println("--------PRINTING ALL ELEMENTS-----------");
-		printAllElements(singleyLinkedList.headNode);
+		printAllElements();
 		System.out.println("------------------------------------------------\n");
 	
 		
 		//printing firstElement
 		System.out.println("--------PRINTING FIRST ELEMENT-----------");
-			printFirstElement(singleyLinkedList.headNode);
+			printFirstElement();
 		System.out.println("------------------------------------------------");
 
 		System.out.println("--------INSERT AT BEGINNING-----------");
 		ListNode node0 = new ListNode(0);
-		insertAtBeginning(node0,singleyLinkedList.headNode);
+		insertAtBeginning(node0);
 	System.out.println("------------------------------------------------");
 	
 	System.out.println("--------INSERT AT END-----------");
 	ListNode node10 = new ListNode(10);
-	insertAtEnd(node10,singleyLinkedList.headNode);
+	insertAtEnd(node10);
 	System.out.println("------------------------------------------------");
 
 	System.out.println("--------INSERT AT POSITION-----------");
 	ListNode node22 = new ListNode(22);
-	insertAtGivenPosition(3,node22, singleyLinkedList.headNode);
+	insertAtGivenPosition(3,node22);
 	System.out.println("------------------");
 	
 	System.out.println("--------DELETE FIRST EMT-----------");
-	deleteFirstNode(singleyLinkedList.headNode);
+	deleteFirstNode();
 	System.out.println("-------------------");
 	
 	System.out.println("--------DELETE LAST EMT-----------");
-	deleteLastNode(singleyLinkedList.headNode);
+	deleteLastNode();
 	System.out.println("-------------------");
 
 	System.out.println("--------DELETE node at position -----------");
-	deleteNodeAtPosition(3,singleyLinkedList.headNode);
+	deleteNodeAtPosition(3);
 	System.out.println("-------------------");
 
 	System.out.println("--------SEARCH node -----------");
-	searchElement(4,singleyLinkedList.headNode);
+	searchElement(4);
 	System.out.println("-------------------");
 
 	System.out.println("--------REVERSE LIST -----------");
@@ -77,18 +78,18 @@ public class SingleyLinkedListt {
 	System.out.println("-------- -----------");
 	
 	System.out.println("--------FIND MIDDLE NODE -----------");
-	findMiddleNode(singleyLinkedList.headNode);
+	findMiddleNode();
 	System.out.println("------------------------------------------");
 	
 	System.out.println("--------FIND Nth NODE from END-----------");
-	findNthNodefromEnd(7, singleyLinkedList.headNode);
+	findNthNodefromEnd(7);
 	System.out.println("------------------------------------------");
 
 	
 	
 	}
 	
-	public static int getSize(ListNode headNode)
+	public static int getSize()
 	{
          int count = 0;
 		ListNode current = headNode;
@@ -101,10 +102,10 @@ public class SingleyLinkedListt {
 		return count;
 	}
 	
-	public static void printAllElements(ListNode headnode) {
+	public static void printAllElements() {
 
 
-			ListNode current = headnode;
+			ListNode current = headNode;
 		while(current!=null)
 		{	
 			System.out.println(current.data);
@@ -112,11 +113,11 @@ public class SingleyLinkedListt {
 		}
 	}
 
-	public static  void printFirstElement(ListNode headNode) {
+	public static  void printFirstElement() {
 		System.out.println(headNode.next.next.data);
 	}
 	
-	public static void insertAtBeginning(ListNode node,ListNode headNode) {
+	public static void insertAtBeginning(ListNode node) {
 		
 	           if(headNode==null)
 	           {
@@ -126,10 +127,10 @@ public class SingleyLinkedListt {
 	        	   node.next =headNode;
 	           }
 	           headNode  = node;
-	           printAllElements(headNode);
+	           printAllElements();
 	}
 
-	public static void insertAtEnd(ListNode endNode, ListNode headNode) {
+	public static void insertAtEnd(ListNode endNode) {
 		
 		ListNode current = headNode;
 		while(current.next !=null)
@@ -137,10 +138,10 @@ public class SingleyLinkedListt {
 			current  = current.next;
 		}
 		current.next = endNode;
-		printAllElements(headNode);
+		printAllElements();
 	}
 	
-	public static void insertAtGivenPosition(int pos, ListNode newNode,  ListNode headNode) {
+	public static void insertAtGivenPosition(int pos, ListNode newNode) {
 		
 		if(pos == 1)
 		{
@@ -159,11 +160,11 @@ public class SingleyLinkedListt {
 			previousNode.next = newNode;	
 		}
 		
-		printAllElements(headNode);
+		printAllElements();
 		
 	}
 
-	public static void deleteFirstNode(ListNode headNode) {
+	public static void deleteFirstNode() {
 		if(headNode==null)
 		{
 			System.out.println("list is empty");
@@ -173,10 +174,10 @@ public class SingleyLinkedListt {
 			temp = null;
 		}
 		
-		printAllElements(headNode);
+		printAllElements();
 	}
 
-	public static void deleteLastNode(ListNode headNode) {
+	public static void deleteLastNode() {
 		if(headNode==null)
 		{
 			System.out.print("list is empty");
@@ -192,11 +193,11 @@ public class SingleyLinkedListt {
 			previous.next = null;
 			
 		}
-		printAllElements(headNode);
+		printAllElements();
 		
 	}
 
-	public static void deleteNodeAtPosition(int position, ListNode headNode) {
+	public static void deleteNodeAtPosition(int position) {
 
 		
 		if(headNode==null)
@@ -216,10 +217,10 @@ public class SingleyLinkedListt {
           previous.next =current.next;
           current = null;
 		}
-		printAllElements(headNode);
+		printAllElements();
 	}
 
-	public static void searchElement(int key, ListNode headNode) {
+	public static void searchElement(int key) {
 		if(headNode==null)
 		{
 			System.out.println("list is empty");
@@ -240,7 +241,7 @@ public class SingleyLinkedListt {
 		}
 	}
 
-	public static void reverseList(ListNode headNode) {
+	public static void reverseList() {
 
 
 
@@ -265,7 +266,7 @@ public class SingleyLinkedListt {
 			
 		}
 
-	public static void findMiddleNode(ListNode headNode ) {
+	public static void findMiddleNode( ) {
 		
 		ListNode slowptr = headNode;
 		ListNode fastptr = headNode;
@@ -280,7 +281,7 @@ public class SingleyLinkedListt {
 		
 	}
 
-	public static void findNthNodefromEnd(int n, ListNode headNode) {
+	public static void findNthNodefromEnd(int n) {
 
 		ListNode mainptr = headNode;
 		ListNode refptr= headNode;
